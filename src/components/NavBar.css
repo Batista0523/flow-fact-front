@@ -1,0 +1,43 @@
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    margin-left: 10px;
+  }
+  
+  .custom-button {
+    margin-right: 10px;
+  }
+  
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 5px 0; 
+    }
+    .navbar-brand {
+      margin-left: 5px;
+    }
+    .custom-button {
+      margin-right: 5px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .navbar {
+      padding: 3px 0; 
+    }
+    .navbar-brand {
+      margin-left: 3px; 
+    }
+    .custom-button {
+      margin-right: 3px; 
+    }
+  }
+  
