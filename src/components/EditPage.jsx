@@ -151,20 +151,16 @@ const EditPage = ({ transactions, onUpdateTransaction, history }) => {
             </div>
           </div>
         </div>
-
-        <button
-          onClick={handleUpdate}
-          type="submit"
-          className="btn btn-primary"
-        >
-          Update Transaction
-        </button>
-        <div className="row"></div>
-        <div className="col-md-6">
-          <Link to="/index" className="btn btn-primary">
-            Back to Index
-          </Link>
-        </div>
+        <div className="row mt-2"></div>
+        <Link to="/index">
+          <button
+            onClick={handleUpdate}
+            type="submit"
+            className="btn btn-primary"
+          >
+            Update Transaction
+          </button>
+        </Link>
       </form>
     </div>
   );

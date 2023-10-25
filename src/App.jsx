@@ -6,12 +6,15 @@ import IndexPage from "./components/IndexPage";
 import ShowPage from "./components/ShowPage";
 import EditPage from "./components/EditPage";
 import Home from "./components/Home";
+import { getEnv } from "./Helpers/getEnv";
 
+const apiUrl = getEnv();
 function App() {
   const [transactions, setTransactions] = useState([]);
+ 
+
   const fetchTransactions = () => {
-    const apiUrl = "http://localhost:3000/transactions";
-    fetch(apiUrl)
+    fetch(`${apiUrl}/transactions`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -29,7 +32,7 @@ function App() {
   }, []);
 
   const createTransaction = (newTransaction) => {
-    fetch("http://localhost:3000/transactions", {
+    fetch(`${apiUrl}/transactions`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -55,7 +58,7 @@ function App() {
   };
 
   const deleteTransaction = (id) => {
-    fetch(`http://localhost:3000/transactions/${id}`, {
+    fetch(`${apiUrl}/transactions/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -79,7 +82,7 @@ function App() {
   }
 
   const updateTransaction = (id, updatedTransaction) => {
-    fetch(`http://localhost:3000/transactions/${id}`, {
+    fetch(`${apiUrl}/transactions/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

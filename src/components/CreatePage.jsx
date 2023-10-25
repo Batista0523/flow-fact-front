@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+
 const CreatePage = ({ createTransaction, updateTotals }) => {
   const [itemName, setItemName] = useState("");
   const [date, setDate] = useState("");
@@ -31,6 +32,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
     setAmount("");
     setIncome(false);
   };
+
   const reset = () => {
     setItemName("");
     setDate("");
@@ -39,6 +41,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
     setAmount("");
     setIncome(false);
   };
+
   return (
     <div className="container mt-4 border p-4">
       <h1>Your Fact Flow</h1>
@@ -139,7 +142,7 @@ const CreatePage = ({ createTransaction, updateTotals }) => {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <button onClick={reset} type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </div>
